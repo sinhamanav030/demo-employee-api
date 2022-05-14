@@ -1,0 +1,11 @@
+server:
+  host: "localhost"
+  port: 8089
+
+# Database Credentials
+database:
+  host: "172.17.0.2"
+  name: "test"
+  user: "postgres"
+  password: "mysecretpassword"
+  port: 5432

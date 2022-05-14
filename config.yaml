@@ -1,0 +1,15 @@
+# Server Configuration
+server:
+  host: "localhost"
+  port: 8089
+
+# Database Credentials
+database:
+  name: "test"
+  user: "postgres"
+  password: "root"
+  port: 5432
+
+# Log Level
+Logging:
+  level: 0 #debug
