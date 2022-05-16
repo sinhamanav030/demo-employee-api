@@ -1,11 +1,12 @@
-DEMO EMPLOYEE API
+##### DEMO EMPLOYEE API
 
-TECH STACK 
+## TECH STACK 
     1. DB - POSTGRES
     2. GORILLA MUX
 
-FOLDER STRUCTURE:-
+## FOLDER STRUCTURE:-
 
+```
 ├── cmd
 │   └── server
 │       └── main.go
@@ -42,17 +43,18 @@ FOLDER STRUCTURE:-
     ├── response.go
     ├── validate.go
     └── verifyToken.go
+```
 
+## COMMON STRUCTS
 
-COMMON STRUCTS
-
-    STATUS
+    # STATUS
         type Status struct {
             Success      bool   `json:"success"`
             ErrorMessage string `json:"errorMessage,omitempty"`
         }
 
-ENDPOINTS
+## ENDPOINTS
+```
     1. (/employees) , METHOD -> GET AUTHORIZATION -> any
         GET ALL EMPLOYEES 
         REQUEST:
@@ -202,9 +204,9 @@ ENDPOINTS
 
         RESPONSE:
              STATUS STRUCT ACCORDING TO SUCCESS OR FAILURE
-           
+```           
 
-LIMITATIONS:
+## LIMITATIONS:
     1. NOT IMPLEMENTED LOGGER FOR LOGGING USED STANDARD GO LOGGER
     2. FORGET PASSWORD AND PASSWORD UPDATION 
     3. REFRESHING JWT COOKIE ACCORDING TO LAST ACCESS TIME
