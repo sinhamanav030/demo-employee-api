@@ -1,12 +1,16 @@
 package employee
 
-import "context"
+import (
+	"context"
+
+	"githb.com/demo-employee-api/internal/entity"
+)
 
 type Service interface {
-	CreateEmployee(ctx context.Context, employee *Employee) error
-	ListEmployee(ctx context.Context) ([]Employee, error)
-	ListEmployeeById(ctx context.Context, id uint) (Employee, error)
-	UpdateEmployee(ctx context.Context, employee *Employee) error
+	CreateEmployee(ctx context.Context, employee *entity.Employee) error
+	ListEmployee(ctx context.Context, archieved bool) ([]entity.Employee, error)
+	ListEmployeeById(ctx context.Context, id uint, archieved bool) (entity.Employee, error)
+	UpdateEmployee(ctx context.Context, employee *entity.Employee) error
 	DeleteEmployee(ctx context.Context, id string) error
 	Migrations(ctx context.Context) error
 }
@@ -19,7 +23,7 @@ func NewService(repo Repository) Service {
 	return service{repo}
 }
 
-func (s service) CreateEmployee(ctx context.Context, employee *Employee) error {
+func (s service) CreateEmployee(ctx context.Context, employee *entity.Employee) error {
 	err := s.repo.Create(ctx, *employee)
 	if err != nil {
 		return err
@@ -27,23 +31,23 @@ func (s service) CreateEmployee(ctx context.Context, employee *Employee) error {
 	return nil
 }
 
-func (s service) ListEmployee(ctx context.Context) ([]Employee, error) {
-	emps, err := s.repo.GetAll(ctx)
+func (s service) ListEmployee(ctx context.Context, archieved bool) ([]entity.Employee, error) {
+	emps, err := s.repo.GetAll(ctx, archieved)
 	if err != nil {
 		return nil, err
 	}
 	return emps, nil
 }
 
-func (s service) ListEmployeeById(ctx context.Context, id uint) (Employee, error) {
-	emp, err := s.repo.GetById(ctx, id)
+func (s service) ListEmployeeById(ctx context.Context, id uint, archieved bool) (entity.Employee, error) {
+	emp, err := s.repo.GetById(ctx, id, archieved)
 	if err != nil {
-		return Employee{}, err
+		return entity.Employee{}, err
 	}
 	return emp, err
 }
 
-func (s service) UpdateEmployee(ctx context.Context, emp *Employee) error {
+func (s service) UpdateEmployee(ctx context.Context, emp *entity.Employee) error {
 	err := s.repo.Update(ctx, *emp)
 	if err != nil {
 		return err

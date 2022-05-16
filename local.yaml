@@ -1,6 +1,7 @@
 server:
   host: "localhost"
   port: 8089
+  cors: "http://localhost/5000"
 
 # Database Credentials
 database:
@@ -9,3 +10,6 @@ database:
   user: "postgres"
   password: "mysecretpassword"
   port: 5432
+
+auth:
+  jwtkey: "mysecretkey"

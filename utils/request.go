@@ -2,6 +2,7 @@ package utils
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 )
 
@@ -12,9 +13,10 @@ func SanitizeRequest(r *http.Request, req interface{}) error {
 		return err
 	}
 
-	// if validationResult := ValidateStruct(req); !validationResult.Success {
-	// 	return validationResult.OriginalError
-	// }
+	if validationResult := ValidateStruct(req); !validationResult.Success {
+		log.Println(validationResult.FieldErrors)
+		return validationResult.OriginalError
+	}
 
 	return nil
 }

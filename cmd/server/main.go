@@ -6,9 +6,12 @@ import (
 	"net/http"
 	"os"
 
+	"githb.com/demo-employee-api/internal/auth"
 	"githb.com/demo-employee-api/internal/config"
 	employee "githb.com/demo-employee-api/internal/employee"
+	"githb.com/demo-employee-api/internal/healthcheck"
 	"githb.com/demo-employee-api/pkg/db"
+	gohandler "github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 )
 
@@ -26,15 +29,25 @@ func main() {
 
 	router := mux.NewRouter()
 
+	healthcheck.RegisterHandlers(router)
+
+	auth.RegisterHandlers(
+		config,
+		router,
+		auth.NewService(auth.NewRepository(db)),
+	)
+
 	employee.RegisterHandlers(
 		config,
 		router,
 		employee.NewService(employee.NewRepository(db)),
 	)
 
+	corsHandler := gohandler.CORS(gohandler.AllowedOrigins([]string{config.Server.Cors}))
+
 	srv := &http.Server{
 		Addr:    ":" + fmt.Sprintf("%v", config.Server.Port),
-		Handler: router,
+		Handler: corsHandler(router),
 	}
 
 	if err := srv.ListenAndServe(); err != nil {

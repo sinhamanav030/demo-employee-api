@@ -12,7 +12,8 @@ type Config struct {
 	Server struct {
 		Port int    `yaml:"port"`
 		Host string `yaml:"host"`
-	}
+		Cors string `yaml:"cors"`
+	} `yaml:"server"`
 
 	Database struct {
 		Host     string `yaml:"host"`
@@ -20,7 +21,11 @@ type Config struct {
 		User     string `yaml:"user"`
 		Password string `yaml:"password"`
 		Port     string `yaml:"port"`
-	}
+	} `yaml:"database"`
+
+	Auth struct {
+		JwtKey string `yaml:"jwtkey"`
+	} `yaml:"auth"`
 }
 
 func Load() (*Config, error) {
