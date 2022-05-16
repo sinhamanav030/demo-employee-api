@@ -8,8 +8,8 @@ import (
 
 type Service interface {
 	CreateEmployee(ctx context.Context, employee *entity.Employee) error
-	ListEmployee(ctx context.Context, archieved bool) ([]entity.Employee, error)
-	ListEmployeeById(ctx context.Context, id uint, archieved bool) (entity.Employee, error)
+	ListEmployee(ctx context.Context, include_archieved bool, page int, perPage int) ([]entity.Employee, error)
+	ListEmployeeByParams(ctx context.Context, params map[string]string, page int, perPage int) ([]entity.Employee, error)
 	UpdateEmployee(ctx context.Context, employee *entity.Employee) error
 	DeleteEmployee(ctx context.Context, id string) error
 	Migrations(ctx context.Context) error
@@ -31,20 +31,20 @@ func (s service) CreateEmployee(ctx context.Context, employee *entity.Employee) 
 	return nil
 }
 
-func (s service) ListEmployee(ctx context.Context, archieved bool) ([]entity.Employee, error) {
-	emps, err := s.repo.GetAll(ctx, archieved)
+func (s service) ListEmployee(ctx context.Context, include_archieved bool, page int, perPage int) ([]entity.Employee, error) {
+	emps, err := s.repo.Get(ctx, include_archieved, page, perPage)
 	if err != nil {
 		return nil, err
 	}
 	return emps, nil
 }
 
-func (s service) ListEmployeeById(ctx context.Context, id uint, archieved bool) (entity.Employee, error) {
-	emp, err := s.repo.GetById(ctx, id, archieved)
+func (s service) ListEmployeeByParams(ctx context.Context, params map[string]string, page int, perPage int) ([]entity.Employee, error) {
+	emps, err := s.repo.GetByParams(ctx, params, page, perPage)
 	if err != nil {
-		return entity.Employee{}, err
+		return nil, err
 	}
-	return emp, err
+	return emps, err
 }
 
 func (s service) UpdateEmployee(ctx context.Context, emp *entity.Employee) error {

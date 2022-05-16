@@ -26,6 +26,11 @@ type Config struct {
 	Auth struct {
 		JwtKey string `yaml:"jwtkey"`
 	} `yaml:"auth"`
+
+	Pagination struct {
+		PerPage     int `yaml:"perpage"`
+		DefaultPage int `yaml:"defaultpage"`
+	} `yaml:"pagination"`
 }
 
 func Load() (*Config, error) {

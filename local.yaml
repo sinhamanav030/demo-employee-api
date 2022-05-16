@@ -1,7 +1,7 @@
 server:
   host: "localhost"
   port: 8089
-  cors: "http://localhost/5000"
+  cors: "http://localhost:5500"
 
 # Database Credentials
 database:
@@ -13,3 +13,7 @@ database:
 
 auth:
   jwtkey: "mysecretkey"
+
+pagination:
+  perpage : 5
+  defaultpage: 1

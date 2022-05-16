@@ -6,6 +6,7 @@ import (
 	"errors"
 	"fmt"
 	"log"
+	"strconv"
 
 	"githb.com/demo-employee-api/internal/entity"
 	"githb.com/demo-employee-api/pkg/customErrors"
@@ -13,8 +14,8 @@ import (
 
 type Repository interface {
 	Create(ctx context.Context, employee entity.Employee) error
-	GetAll(ctx context.Context, archieved bool) ([]entity.Employee, error)
-	GetById(ctx context.Context, id uint, archieved bool) (entity.Employee, error)
+	Get(ctx context.Context, include_archieved bool, page int, perPage int) ([]entity.Employee, error)
+	GetByParams(ctx context.Context, params map[string]string, page int, perPage int) ([]entity.Employee, error)
 	Update(ctx context.Context, employee entity.Employee) error
 	Delete(ctx context.Context, id string) error
 	Migrations(ctx context.Context) error
@@ -51,9 +52,9 @@ func (rep repository) Create(ctx context.Context, emp entity.Employee) error {
 
 }
 
-func (rep repository) GetAll(ctx context.Context, archieved bool) ([]entity.Employee, error) {
+func (rep repository) Get(ctx context.Context, include_archieved bool, page int, perPage int) ([]entity.Employee, error) {
 	emps := make([]entity.Employee, 0)
-	query := fmt.Sprintf(`SELECT user_id,first_name,last_name,email,role FROM employees WHERE archieved=%v;`, archieved)
+	query := fmt.Sprintf(`SELECT user_id,first_name,last_name,email,role FROM employees WHERE archieved=false or archieved=%v limit %d offset %d ;`, include_archieved, perPage, (page-1)*perPage)
 	rows, err := rep.db.QueryContext(ctx, query)
 	if err != nil {
 		return emps, err
@@ -66,22 +67,63 @@ func (rep repository) GetAll(ctx context.Context, archieved bool) ([]entity.Empl
 	return emps, nil
 }
 
-func (rep repository) GetById(ctx context.Context, id uint, archieved bool) (entity.Employee, error) {
+func (rep repository) GetByParams(ctx context.Context, params map[string]string, page int, perPage int) ([]entity.Employee, error) {
 	// emps := make([]entity.Employee, 0)
-	query := fmt.Sprintf("SELECT user_id,first_name,last_name,email,role FROM employees WHERE user_id=%v AND archieved=%v;", id, archieved)
+
+	fmt.Println(params)
+	query := "SELECT user_id,first_name,last_name,email,role FROM employees WHERE "
+
+	if _, ok := params["user_id"]; ok {
+		if idv, err := strconv.Atoi(params["user_id"]); err != nil {
+			query = fmt.Sprintf(query, " user_id=%v AND ", idv)
+		}
+
+	}
+	for key, value := range params {
+		fmt.Println(key, value)
+		if key == "user_id" || key == "page" || key == "per_page" || key == "sort_by" || key == "sort_order" {
+			continue
+		}
+		if key != "archieved" {
+			query = query + key + " ILIKE '%" + value + "%' AND "
+		}
+		fmt.Println(query)
+	}
+
+	perPageV := fmt.Sprintf("%d", (page-1)*perPage)
+	pageV := fmt.Sprintf("%d", perPage)
+	query = query + " archieved=" + params["archieved"]
+	if v, ok := params["sort_by"]; ok {
+		validColumn := false
+		columns := []string{"user_id", "first_name", "last_name", "email", "created_at", "last_access_at", "updated_at"}
+		for _, col := range columns {
+			if v == col {
+				validColumn = true
+				break
+			}
+		}
+		if validColumn {
+			query = query + " order by " + v + " " + params["sort_order"]
+		}
+	}
+	query = query + " offset " + perPageV + " limit " + pageV
+
+	fmt.Println(query)
+
 	rows, err := rep.db.QueryContext(ctx, query)
-	// rows, err := rep.db.QueryContext(ctx, "SELECT USER_ID,FIRST_NAME,LAST_NAME,EMAIL FROM EMPLOYEES WHERE USER_ID=? AND ARCHIEVED=FALSE;", id)
 	if err != nil {
-		return entity.Employee{}, err
+		return nil, err
 	}
-	var employee entity.Employee
+	employees := make([]entity.Employee, 0)
 	for rows.Next() {
+		var employee entity.Employee
 		rows.Scan(&employee.UserId, &employee.FirstName, &employee.LastName, &employee.Email, &employee.Role)
+		employees = append(employees, employee)
 	}
-	if employee.UserId == 0 {
-		return entity.Employee{}, errors.New(customErrors.ErrorDataNotFound)
+	if len(employees) == 0 {
+		return nil, errors.New(customErrors.ErrorDataNotFound)
 	}
-	return employee, nil
+	return employees, nil
 
 }
 

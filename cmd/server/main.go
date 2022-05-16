@@ -11,8 +11,9 @@ import (
 	employee "githb.com/demo-employee-api/internal/employee"
 	"githb.com/demo-employee-api/internal/healthcheck"
 	"githb.com/demo-employee-api/pkg/db"
-	gohandler "github.com/gorilla/handlers"
+	// gohandler "github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
+	"github.com/rs/cors"
 )
 
 func main() {
@@ -42,12 +43,13 @@ func main() {
 		router,
 		employee.NewService(employee.NewRepository(db)),
 	)
+	handler := cors.Default().Handler(router)
 
-	corsHandler := gohandler.CORS(gohandler.AllowedOrigins([]string{config.Server.Cors}))
-
+	// corsHandler := gohandler.CORS(gohandler.AllowedOrigins([]string{"*"}))
+	fmt.Println(config.Server.Cors)
 	srv := &http.Server{
 		Addr:    ":" + fmt.Sprintf("%v", config.Server.Port),
-		Handler: corsHandler(router),
+		Handler: handler,
 	}
 
 	if err := srv.ListenAndServe(); err != nil {

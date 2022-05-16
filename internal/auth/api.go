@@ -36,7 +36,7 @@ type Status struct {
 
 func RegisterHandlers(conf *config.Config, router *mux.Router, svc Service) {
 	res := resource{conf, svc}
-	router.HandleFunc("/auth/login", res.Login).Methods("POST")
+	router.HandleFunc("/auth/login", res.Login).Methods("POST", http.MethodOptions)
 	router.HandleFunc("/auth/logout", res.Logout).Methods("GET")
 }
 

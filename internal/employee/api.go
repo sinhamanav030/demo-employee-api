@@ -1,6 +1,7 @@
 package employee
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"strconv"
@@ -44,9 +45,7 @@ type UpdateEmpReq struct {
 func RegisterHandlers(conf *config.Config, router *mux.Router, svc Service) {
 	res := resource{conf, svc}
 	router.HandleFunc("/employees", res.ListEmployee).Methods("GET")
-	router.HandleFunc("/employees/archieved", middleware.AuthorizeUser(res.conf, res.ListArchievedEmployee)).Methods("GET")
-	router.HandleFunc("/employees/{id}", res.ListEmployeeById).Methods("GET")
-	router.HandleFunc("/employees/archieved/{id}", middleware.AuthorizeUser(res.conf, res.ListArchievedEmployeeById)).Methods("GET")
+	router.HandleFunc("/employees/params", res.ListEmployeeByParams).Methods("GET")
 	router.HandleFunc("/employee", middleware.AuthorizeUser(res.conf, res.CreateEmployee)).Methods("POST")
 	router.HandleFunc("/employee/{id}", middleware.AuthorizeUser(res.conf, res.UpdateEmployee)).Methods("PUT")
 	router.HandleFunc("/employee/{id}", middleware.AuthorizeUser(res.conf, res.DeleteEmployee)).Methods("DELETE")
@@ -89,7 +88,24 @@ func (res resource) CreateEmployee(w http.ResponseWriter, r *http.Request) {
 
 func (res resource) ListEmployee(w http.ResponseWriter, r *http.Request) {
 	resp := ListEmpRes{}
-	emps, err := res.service.ListEmployee(r.Context(), false)
+	params, err := utils.SanitizeParameters(res.conf, r)
+	if err != nil {
+		log.Println(err)
+		errRes, code := customErrors.ErrorDisplayMode(err.Error())
+		utils.JsonResponse(w, code, errRes)
+		return
+
+	}
+	fmt.Println(params)
+	var page, perPage int
+	if page, err = strconv.Atoi(params["page"]); err != nil {
+		page = res.conf.Pagination.DefaultPage
+	}
+	if perPage, err = strconv.Atoi(params["per_page"]); err != nil {
+		perPage = res.conf.Pagination.PerPage
+	}
+
+	emps, err := res.service.ListEmployee(r.Context(), params["archieved"] == "true", page, perPage)
 	if err != nil {
 		log.Println(err)
 		errRes, code := customErrors.ErrorDisplayMode(err.Error())
@@ -101,9 +117,20 @@ func (res resource) ListEmployee(w http.ResponseWriter, r *http.Request) {
 	utils.JsonResponse(w, http.StatusOK, resp)
 }
 
-func (res resource) ListArchievedEmployee(w http.ResponseWriter, r *http.Request) {
+func (res resource) ListEmployeeByParams(w http.ResponseWriter, r *http.Request) {
+
+	params, err := utils.SanitizeParameters(res.conf, r)
+
 	resp := ListEmpRes{}
-	emps, err := res.service.ListEmployee(r.Context(), true)
+	var page, perPage int
+	if page, err = strconv.Atoi(params["page"]); err != nil {
+		page = res.conf.Pagination.DefaultPage
+	}
+	if perPage, err = strconv.Atoi(params["per_page"]); err != nil {
+		perPage = res.conf.Pagination.PerPage
+	}
+
+	emps, err := res.service.ListEmployeeByParams(r.Context(), params, page, perPage)
 	if err != nil {
 		log.Println(err)
 		errRes, code := customErrors.ErrorDisplayMode(err.Error())
@@ -112,72 +139,6 @@ func (res resource) ListArchievedEmployee(w http.ResponseWriter, r *http.Request
 	}
 	resp.Status.Success = true
 	resp.Employees = emps
-	utils.JsonResponse(w, http.StatusOK, resp)
-
-}
-
-func (res resource) ListEmployeeById(w http.ResponseWriter, r *http.Request) {
-	// id := r.URL.Query().Get("id")
-	id := mux.Vars(r)["id"]
-	resp := ListEmpByIdRes{}
-	if id == "" {
-		log.Println("id is required ")
-		resp.Status.ErrorMessage = "id is required"
-		utils.JsonResponse(w, http.StatusBadRequest, resp)
-		return
-	}
-	idv, err := strconv.Atoi(id)
-	if err != nil {
-		log.Printf("failed to convert id: %s ", err)
-		resp.Status.ErrorMessage = err.Error()
-		utils.JsonResponse(w, http.StatusBadRequest, resp)
-		return
-	}
-
-	emp, err := res.service.ListEmployeeById(r.Context(), uint(idv), false)
-	if err != nil {
-		log.Println(err)
-		errRes, code := customErrors.ErrorDisplayMode(err.Error())
-		utils.JsonResponse(w, code, errRes)
-		return
-	}
-	resp.Status.Success = true
-	if emp.UserId != 0 {
-		resp.Employee = emp
-	}
-	utils.JsonResponse(w, http.StatusOK, resp)
-
-}
-
-func (res resource) ListArchievedEmployeeById(w http.ResponseWriter, r *http.Request) {
-	// id := r.URL.Query().Get("id")
-	id := mux.Vars(r)["id"]
-	resp := ListEmpByIdRes{}
-	if id == "" {
-		log.Println("id is required ")
-		resp.Status.ErrorMessage = "id is required"
-		utils.JsonResponse(w, http.StatusBadRequest, resp)
-		return
-	}
-	idv, err := strconv.Atoi(id)
-	if err != nil {
-		log.Printf("failed to convert id: %s ", err)
-		resp.Status.ErrorMessage = err.Error()
-		utils.JsonResponse(w, http.StatusBadRequest, resp)
-		return
-	}
-
-	emp, err := res.service.ListEmployeeById(r.Context(), uint(idv), true)
-	if err != nil {
-		log.Println(err)
-		errRes, code := customErrors.ErrorDisplayMode(err.Error())
-		utils.JsonResponse(w, code, errRes)
-		return
-	}
-	resp.Status.Success = true
-	if emp.UserId != 0 {
-		resp.Employee = emp
-	}
 	utils.JsonResponse(w, http.StatusOK, resp)
 
 }
