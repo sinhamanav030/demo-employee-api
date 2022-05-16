@@ -54,8 +54,8 @@
         }
 
 ## ENDPOINTS
-```
-    1. (/employees) , METHOD -> GET AUTHORIZATION -> any
+
+    ### 1. (/employees) , METHOD -> GET AUTHORIZATION -> any
         GET ALL EMPLOYEES 
         REQUEST:
             QUERY PARAMETERS : 
@@ -64,6 +64,7 @@
                 3. per_page : {integer} DEFAULT : 5 OPTIONAL
         RESPONSE:
             STRUCT USED
+                ```
                 type Employee struct {
                     UserId       int    
                     FirstName    string 
@@ -76,13 +77,16 @@
                     UpdatedAt    string 
                     Archieved    bool   
                 }
+                ```
             JSON RESPONSE : 
+            ```
                 {
                     status Status
                     employees []Employee
                 }
+            ```
     
-    2. (/employees/params) , METHOD ->GET ,AUTHORIZATION -> any
+    ### 2. (/employees/params) , METHOD ->GET ,AUTHORIZATION -> any
         GET EMPLOYEES BASED ON QUERY PARAMS ,USED FOR (SEARCHING,SORTING)
         REQUEST:
             QUERY PARAMETERS : 
@@ -95,6 +99,7 @@
                 7. sort_order : {asc/desc} DEFAULT(IN CASE sort_order is set) : asc
         RESPONSE:
             STRUCT USED
+            ```
                 type Employee struct {
                     UserId       int    
                     FirstName    string 
@@ -107,15 +112,19 @@
                     UpdatedAt    string 
                     Archieved    bool   
                 }
+            ```
             JSON RESPONSE : 
+            ```
                 type ListEmpRes struct {
                     Status    Status            `json:"status"`
                     Employees []entity.Employee `json:"employees"`
                 }
+            ```
     
-    3. (/employee), METHOD-> POST ,AUTHORIZATION -> admin
+    ### 3. (/employee), METHOD-> POST ,AUTHORIZATION -> admin
         TO CREATE NEW EMPLOYEE RECORD
         REQUEST:
+        ```
             BODY:
                 {
                     "first_name" :"...",
@@ -125,69 +134,82 @@
                     "role":"..."
                 }
                 ALL REQUIRED FIELDS 
-        
+        ```
         RESPONSE:
             STATUS STRUCT ACCORDING TO SUCCESS OR FAILURE
 
-    4. (/employee/{id}), METHOD-> PUT ,AUTHORIZATION -> admin
+    ### 4. (/employee/{id}), METHOD-> PUT ,AUTHORIZATION -> admin
         TO UPDATE EMPLOYEE DETAILS
         REQUEST:
             STRUCT:
+            ```
                 type UpdateEmpReq struct {
                     UserId    int    `json:"user_id,omitempty"`
                     FirstName string `json:"first_name,omitempty" validate:"required"`
                     LastName  string `json:"last_name,omitempty" validate:"required"`
                     Role      string `json:"role" validate:"required,role"`
                 }
+            ```
 
             BODY:
+            ```
                 {
                     "first_name" :"...",
                     "last_name" :"...",
                     "email": "...",
                     "role":"..."
                 }
+            ```
         
         RESPONSE:
             STATUS STRUCT ACCORDING TO SUCCESS OR FAILURE
 
 
-    5. (/employee/{id}), METHOD-> DELETE, AUTHORIZATION -> admin
+    ### 5. (/employee/{id}), METHOD-> DELETE, AUTHORIZATION -> admin
         TO DELETE EMPLOYEE DETAILS
         
         RESPONSE:
             STATUS STRUCT ACCORDING TO SUCCESS OR FAILURE
 
-    6. (/auth/login) , METHOD -> POST, AUTHORIZATION -> any
+    ### 6. (/auth/login) , METHOD -> POST, AUTHORIZATION -> any
         TO LOGG IN, SETS JWT TOKEN IN COOKIE 
 
         JWT CLAIMS STRUCT:
+        ```
             type Claims struct {
                 Email  string `json:"email"`
                 UserId int    `json:"user_id"`
                 Role   string `json:"role"`
                 jwt.StandardClaims
             }
+        ```
 
 
         REQUEST STRUCT:
+        ```
             type LoginReq struct {
                 Email    string `json:"email" validate:"required,email"`
                 Password string `json:"password" validate:"required,password"`
             }
+        ```
 
         REQUEST:
+        ```
             {
                 "email": "...",
                 "password": "..."
             }
+        ```
         RESPONSE STRUCT :
+        ```
             type LoginRes struct {
                 Status Status          `json:"status"`
                 Emp    entity.Employee `json:"employee"`
             }
+        ```
 
         RESPONSE:
+        ```
             {
                 "status": {
                     "success": {true|false}
@@ -198,6 +220,7 @@
                     "role": "..."
                 }
             }
+        ```
 
     7. (/auth/logout), METHOD ->POST ,AUTHORIZATION ->IF YOU'RE LOGGED IN
         TO LOG OUT
