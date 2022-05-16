@@ -30,11 +30,6 @@ type ListEmpRes struct {
 	Employees []entity.Employee `json:"employees"`
 }
 
-type ListEmpByIdRes struct {
-	Status   Status          `json:"status"`
-	Employee entity.Employee `json:"employee"`
-}
-
 type UpdateEmpReq struct {
 	UserId    int    `json:"user_id,omitempty"`
 	FirstName string `json:"first_name,omitempty" validate:"required"`

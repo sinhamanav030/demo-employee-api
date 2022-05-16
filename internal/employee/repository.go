@@ -70,7 +70,7 @@ func (rep repository) Get(ctx context.Context, include_archieved bool, page int,
 func (rep repository) GetByParams(ctx context.Context, params map[string]string, page int, perPage int) ([]entity.Employee, error) {
 	// emps := make([]entity.Employee, 0)
 
-	fmt.Println(params)
+	// fmt.Println(params)
 	query := "SELECT user_id,first_name,last_name,email,role FROM employees WHERE "
 
 	if _, ok := params["user_id"]; ok {
@@ -108,7 +108,7 @@ func (rep repository) GetByParams(ctx context.Context, params map[string]string,
 	}
 	query = query + " offset " + perPageV + " limit " + pageV
 
-	fmt.Println(query)
+	// fmt.Println(query)
 
 	rows, err := rep.db.QueryContext(ctx, query)
 	if err != nil {

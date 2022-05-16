@@ -46,7 +46,7 @@ func main() {
 	handler := cors.Default().Handler(router)
 
 	// corsHandler := gohandler.CORS(gohandler.AllowedOrigins([]string{"*"}))
-	fmt.Println(config.Server.Cors)
+	// fmt.Println(config.Server.Cors)
 	srv := &http.Server{
 		Addr:    ":" + fmt.Sprintf("%v", config.Server.Port),
 		Handler: handler,

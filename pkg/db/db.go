@@ -11,7 +11,7 @@ import (
 
 func NewDb(conf *config.Config) (*sql.DB, error) {
 	dsn := fmt.Sprintf("postgres://%v:%v@%v:%v/%v?sslmode=disable", conf.Database.User, conf.Database.Password, conf.Database.Host, conf.Database.Port, conf.Database.Name)
-	fmt.Println(dsn)
+	// fmt.Println(dsn)
 
 	connDb, err := sql.Open("postgres", dsn)
 	if err != nil {
