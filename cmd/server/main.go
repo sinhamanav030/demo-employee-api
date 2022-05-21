@@ -9,7 +9,7 @@ import (
 	"githb.com/demo-employee-api/internal/auth"
 	"githb.com/demo-employee-api/internal/config"
 	employee "githb.com/demo-employee-api/internal/employee"
-	"githb.com/demo-employee-api/internal/healthcheck"
+	// "githb.com/demo-employee-api/internal/healthcheck"
 	"githb.com/demo-employee-api/pkg/db"
 	// gohandler "github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
@@ -30,7 +30,7 @@ func main() {
 
 	router := mux.NewRouter()
 
-	healthcheck.RegisterHandlers(router)
+	// healthcheck.RegisterHandlers(router)
 
 	auth.RegisterHandlers(
 		config,

@@ -18,12 +18,12 @@ func AuthorizeUser(conf *config.Config, f http.HandlerFunc) http.HandlerFunc {
 		if err != nil {
 			if err == http.ErrNoCookie {
 				log.Println(err)
-				errResp, code := customErrors.ErrorDisplayMode(customErrors.ErrorUnAuthorized)
+				errResp, code := customErrors.FindErrorType(customErrors.ErrorUnAuthorized)
 				utils.JsonResponse(w, code, errResp)
 				return
 			}
 			log.Println(err)
-			errResp, code := customErrors.ErrorDisplayMode(err.Error())
+			errResp, code := customErrors.FindErrorType(err.Error())
 			utils.JsonResponse(w, code, errResp)
 			return
 
@@ -34,7 +34,7 @@ func AuthorizeUser(conf *config.Config, f http.HandlerFunc) http.HandlerFunc {
 		claims, err := utils.ExtractToken(tokenStr, conf.Auth.JwtKey)
 		if err != nil {
 			log.Println(err)
-			errResp, code := customErrors.ErrorDisplayMode(err.Error())
+			errResp, code := customErrors.FindErrorType(err.Error())
 			utils.JsonResponse(w, code, errResp)
 			return
 		}
@@ -42,7 +42,7 @@ func AuthorizeUser(conf *config.Config, f http.HandlerFunc) http.HandlerFunc {
 
 		if claims.Role != entity.RoleAdmin {
 			log.Println(err)
-			errResp, code := customErrors.ErrorDisplayMode(customErrors.ErrorUnAuthorized)
+			errResp, code := customErrors.FindErrorType(customErrors.ErrorUnAuthorized)
 			utils.JsonResponse(w, code, errResp)
 			return
 		}

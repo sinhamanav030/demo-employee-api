@@ -50,7 +50,7 @@ func (e ErrorResponse) ValidationFailed(msg string) (ErrorResponse, int) {
 	return e, http.StatusBadRequest
 }
 
-func ErrorDisplayMode(err string) (ErrorResponse, int) {
+func FindErrorType(err string) (ErrorResponse, int) {
 	errResp := ErrorResponse{}
 	switch err {
 	case ErrorDataNotFound:
@@ -80,7 +80,7 @@ func ErrorDisplayMode(err string) (ErrorResponse, int) {
 func GetErrorResponse(err, actual string) (ErrorResponse, int) {
 
 	// if config.AppConfig.Environment == "dev" {
-	return ErrorDisplayMode(actual)
+	return FindErrorType(actual)
 	// }
 
 	// return ErrorDisplayMode(err)

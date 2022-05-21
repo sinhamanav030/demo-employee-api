@@ -43,10 +43,10 @@ func RegisterHandlers(conf *config.Config, router *mux.Router, svc Service) {
 func (res resource) Login(w http.ResponseWriter, r *http.Request) {
 	req := LoginReq{}
 	resp := LoginRes{}
-	err := utils.SanitizeRequest(r, &req)
+	err := utils.ValidateRequest(r, &req)
 	if err != nil {
 		log.Println(err)
-		errResp, code := customErrors.ErrorDisplayMode(err.Error())
+		errResp, code := customErrors.FindErrorType(err.Error())
 		utils.JsonResponse(w, code, errResp)
 		return
 	}
@@ -54,7 +54,7 @@ func (res resource) Login(w http.ResponseWriter, r *http.Request) {
 	emp, err := res.service.LoginEmployee(r.Context(), req.Email, req.Password)
 	if err != nil {
 		log.Println(err)
-		errResp, code := customErrors.ErrorDisplayMode(err.Error())
+		errResp, code := customErrors.FindErrorType(err.Error())
 		utils.JsonResponse(w, code, errResp)
 		return
 	}
@@ -73,7 +73,7 @@ func (res resource) Login(w http.ResponseWriter, r *http.Request) {
 	tokenstring, err := token.SignedString([]byte(res.conf.Auth.JwtKey))
 	if err != nil {
 		log.Println(err)
-		errResp, code := customErrors.ErrorDisplayMode(err.Error())
+		errResp, code := customErrors.FindErrorType(err.Error())
 		utils.JsonResponse(w, code, errResp)
 		return
 	}
@@ -97,7 +97,7 @@ func (res resource) Logout(w http.ResponseWriter, r *http.Request) {
 	cookie, err := r.Cookie("auth-token")
 	if err != nil {
 		log.Println(err)
-		errResp, code := customErrors.ErrorDisplayMode(customErrors.ErrorUnAuthorized)
+		errResp, code := customErrors.FindErrorType(customErrors.ErrorUnAuthorized)
 		utils.JsonResponse(w, code, errResp)
 		return
 	}
@@ -106,7 +106,7 @@ func (res resource) Logout(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
 		log.Println(err)
-		erResp, code := customErrors.ErrorDisplayMode(err.Error())
+		erResp, code := customErrors.FindErrorType(err.Error())
 		utils.JsonResponse(w, code, erResp)
 		return
 	}

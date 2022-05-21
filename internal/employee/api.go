@@ -44,13 +44,13 @@ func RegisterHandlers(conf *config.Config, router *mux.Router, svc Service) {
 	router.HandleFunc("/employee", middleware.AuthorizeUser(res.conf, res.CreateEmployee)).Methods("POST")
 	router.HandleFunc("/employee/{id}", middleware.AuthorizeUser(res.conf, res.UpdateEmployee)).Methods("PUT")
 	router.HandleFunc("/employee/{id}", middleware.AuthorizeUser(res.conf, res.DeleteEmployee)).Methods("DELETE")
-	router.HandleFunc("/migrations", middleware.AuthorizeUser(res.conf, res.Migrations)).Methods("GET")
+	// router.HandleFunc("/migrations", middleware.AuthorizeUser(res.conf, res.Migrations)).Methods("GET")
 }
 
 func (res resource) CreateEmployee(w http.ResponseWriter, r *http.Request) {
 	resp := Status{}
 	emp := entity.Employee{}
-	err := utils.SanitizeRequest(r, &emp)
+	err := utils.ValidateRequest(r, &emp)
 	if err != nil {
 		log.Print(err)
 		resp.ErrorMessage = err.Error()
@@ -73,7 +73,7 @@ func (res resource) CreateEmployee(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
 		log.Println(err)
-		errRes, code := customErrors.ErrorDisplayMode(err.Error())
+		errRes, code := customErrors.FindErrorType(err.Error())
 		utils.JsonResponse(w, code, errRes)
 		return
 	}
@@ -83,10 +83,10 @@ func (res resource) CreateEmployee(w http.ResponseWriter, r *http.Request) {
 
 func (res resource) ListEmployee(w http.ResponseWriter, r *http.Request) {
 	resp := ListEmpRes{}
-	params, err := utils.SanitizeParameters(res.conf, r)
+	params, err := utils.ValidateParameters(res.conf, r)
 	if err != nil {
 		log.Println(err)
-		errRes, code := customErrors.ErrorDisplayMode(err.Error())
+		errRes, code := customErrors.FindErrorType(err.Error())
 		utils.JsonResponse(w, code, errRes)
 		return
 
@@ -103,7 +103,7 @@ func (res resource) ListEmployee(w http.ResponseWriter, r *http.Request) {
 	emps, err := res.service.ListEmployee(r.Context(), params["archieved"] == "true", page, perPage)
 	if err != nil {
 		log.Println(err)
-		errRes, code := customErrors.ErrorDisplayMode(err.Error())
+		errRes, code := customErrors.FindErrorType(err.Error())
 		utils.JsonResponse(w, code, errRes)
 		return
 	}
@@ -114,7 +114,7 @@ func (res resource) ListEmployee(w http.ResponseWriter, r *http.Request) {
 
 func (res resource) ListEmployeeByParams(w http.ResponseWriter, r *http.Request) {
 
-	params, err := utils.SanitizeParameters(res.conf, r)
+	params, err := utils.ValidateParameters(res.conf, r)
 
 	resp := ListEmpRes{}
 	var page, perPage int
@@ -128,7 +128,7 @@ func (res resource) ListEmployeeByParams(w http.ResponseWriter, r *http.Request)
 	emps, err := res.service.ListEmployeeByParams(r.Context(), params, page, perPage)
 	if err != nil {
 		log.Println(err)
-		errRes, code := customErrors.ErrorDisplayMode(err.Error())
+		errRes, code := customErrors.FindErrorType(err.Error())
 		utils.JsonResponse(w, code, errRes)
 		return
 	}
@@ -148,7 +148,7 @@ func (res resource) UpdateEmployee(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var emp UpdateEmpReq
-	err := utils.SanitizeRequest(r, &emp)
+	err := utils.ValidateRequest(r, &emp)
 	if err != nil {
 		log.Println(err)
 		resp.ErrorMessage = err.Error()
@@ -171,7 +171,7 @@ func (res resource) UpdateEmployee(w http.ResponseWriter, r *http.Request) {
 	err = res.service.UpdateEmployee(r.Context(), &employee)
 	if err != nil {
 		log.Println(err)
-		errRes, code := customErrors.ErrorDisplayMode(err.Error())
+		errRes, code := customErrors.FindErrorType(err.Error())
 		utils.JsonResponse(w, code, errRes)
 		return
 	}
@@ -191,7 +191,7 @@ func (res resource) DeleteEmployee(w http.ResponseWriter, r *http.Request) {
 	err := res.service.DeleteEmployee(r.Context(), id)
 	if err != nil {
 		log.Println(err)
-		errRes, code := customErrors.ErrorDisplayMode(err.Error())
+		errRes, code := customErrors.FindErrorType(err.Error())
 		utils.JsonResponse(w, code, errRes)
 		return
 	}
@@ -204,7 +204,7 @@ func (res resource) Migrations(w http.ResponseWriter, r *http.Request) {
 	resp := Status{}
 	err := res.service.Migrations(r.Context())
 	if err != nil {
-		errRes, code := customErrors.ErrorDisplayMode(err.Error())
+		errRes, code := customErrors.FindErrorType(err.Error())
 		utils.JsonResponse(w, code, errRes)
 		return
 	}

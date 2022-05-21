@@ -10,15 +10,15 @@ import (
 	"githb.com/demo-employee-api/internal/config"
 )
 
-type QueryParameters struct {
-	IncludeArchieved bool   `json:"include_archieved"`
-	Id               int    `json:"id"`
-	Name             string `json:"name"`
-	Page             int    `json:"page"`
-	PerPage          int    `json:"perpage"`
-}
+// type QueryParameters struct {
+// 	IncludeArchieved bool   `json:"include_archieved"`
+// 	Id               int    `json:"id"`
+// 	Name             string `json:"name"`
+// 	Page             int    `json:"page"`
+// 	PerPage          int    `json:"perpage"`
+// }
 
-func SanitizeRequest(r *http.Request, req interface{}) error {
+func ValidateRequest(r *http.Request, req interface{}) error {
 	decoder := json.NewDecoder(r.Body)
 	defer r.Body.Close()
 	if err := decoder.Decode(req); err != nil {
@@ -33,7 +33,7 @@ func SanitizeRequest(r *http.Request, req interface{}) error {
 	return nil
 }
 
-func SanitizeParameters(conf *config.Config, r *http.Request) (map[string]string, error) {
+func ValidateParameters(conf *config.Config, r *http.Request) (map[string]string, error) {
 	paramMap := make(map[string]string)
 	if id := r.URL.Query().Get("id"); id != "" {
 		paramMap["user_id"] = id

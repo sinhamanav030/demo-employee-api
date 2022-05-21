@@ -87,7 +87,7 @@ func (rep repository) GetByParams(ctx context.Context, params map[string]string,
 		if key != "archieved" {
 			query = query + key + " ILIKE '%" + value + "%' AND "
 		}
-		fmt.Println(query)
+		// fmt.Println(query)
 	}
 
 	perPageV := fmt.Sprintf("%d", (page-1)*perPage)
@@ -108,7 +108,7 @@ func (rep repository) GetByParams(ctx context.Context, params map[string]string,
 	}
 	query = query + " offset " + perPageV + " limit " + pageV
 
-	// fmt.Println(query)
+	fmt.Println(query)
 
 	rows, err := rep.db.QueryContext(ctx, query)
 	if err != nil {
