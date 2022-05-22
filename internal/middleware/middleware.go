@@ -59,6 +59,8 @@ func AuthorizeUser(tokenMaker token.Maker, logger *log.Logger, f http.HandlerFun
 			return
 		}
 
+		logger.Println("Authorization Succesful")
+
 		f(w, r)
 	}
 }

@@ -86,14 +86,12 @@ func (rep repository) GetByParams(ctx context.Context, params map[string]string,
 
 	}
 	for key, value := range params {
-		fmt.Println(key, value)
 		if key == "user_id" || key == "page" || key == "per_page" || key == "sort_by" || key == "sort_order" {
 			continue
 		}
 		if key != "archieved" {
 			query = query + key + " ILIKE '%" + value + "%' AND "
 		}
-		// fmt.Println(query)
 	}
 
 	perPageV := fmt.Sprintf("%d", (page-1)*perPage)

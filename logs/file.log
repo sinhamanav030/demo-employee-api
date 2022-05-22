@@ -1,0 +1,18 @@
+2022/05/22 20:48:39 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/cmd/server/main.go:38: Connection Success
+2022/05/22 20:52:59 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/cmd/server/main.go:37: Connection Success
+2022/05/22 20:53:11 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:117: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by created_at asc offset 5 limit 5
+2022/05/22 20:53:23 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:49: invalid token token is invalid
+2022/05/22 21:02:36 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/cmd/server/main.go:37: Connection Success
+2022/05/22 21:03:00 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:20: authorization not provided
+2022/05/22 21:03:11 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:67: manavsinha03@gmail.com Logged In
+2022/05/22 21:03:34 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:62: Authorization Succesful
+2022/05/22 21:03:34 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:210: 1 rows updated
+2022/05/22 21:03:34 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:203: 9 Employee Deleted
+2022/05/22 21:03:47 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:62: Authorization Succesful
+2022/05/22 21:03:47 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:210: 1 rows updated
+2022/05/22 21:03:47 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:203: 12 Employee Deleted
+2022/05/22 21:03:51 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:62: Authorization Succesful
+2022/05/22 21:03:51 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:210: 1 rows updated
+2022/05/22 21:03:51 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:203: 15 Employee Deleted
+2022/05/22 21:06:26 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/cmd/server/main.go:37: Connection Success
+2022/05/22 21:06:31 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:67: manavsinha03@gmail.com Logged In

@@ -64,6 +64,7 @@ func (res resource) LoginEmployee(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, code, errResp)
 		return
 	}
+	res.logger.Printf("%v Logged In", req.Email)
 	resp.AccessToken = token
 	resp.Status.Success = true
 	utils.JsonResponse(w, http.StatusOK, resp)
@@ -89,6 +90,7 @@ func (res resource) CreateEmployee(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, code, errRes)
 		return
 	}
+	res.logger.Printf("%v user created\n", emp.UserId)
 	resp.Success = true
 	utils.JsonResponse(w, http.StatusOK, resp)
 }
@@ -118,6 +120,7 @@ func (res resource) ListEmployee(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, code, errRes)
 		return
 	}
+	res.logger.Println("List Employee Query Exeuted")
 	resp.Status.Success = true
 	resp.Employees = emps
 	utils.JsonResponse(w, http.StatusOK, resp)
@@ -142,6 +145,7 @@ func (res resource) ListEmployeeByParams(w http.ResponseWriter, r *http.Request)
 		utils.JsonResponse(w, code, errRes)
 		return
 	}
+	res.logger.Println("List Employee Query with Params Exeuted")
 	resp.Status.Success = true
 	resp.Employees = emps
 	utils.JsonResponse(w, http.StatusOK, resp)
@@ -181,6 +185,7 @@ func (res resource) UpdateEmployee(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, code, errRes)
 		return
 	}
+	res.logger.Printf("id:%v Employee updated\n", idv)
 	resp.Success = true
 	utils.JsonResponse(w, http.StatusOK, resp)
 }
@@ -195,7 +200,7 @@ func (res resource) DeleteEmployee(w http.ResponseWriter, r *http.Request) {
 		utils.JsonResponse(w, code, errRes)
 		return
 	}
-
+	res.logger.Printf("id:%v Employee Deleted\n", id)
 	resp.Success = true
 	utils.JsonResponse(w, http.StatusOK, resp)
 }

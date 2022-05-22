@@ -3,7 +3,6 @@ package employee
 import (
 	"context"
 	"errors"
-	"fmt"
 	"log"
 	"strconv"
 	"time"
@@ -41,7 +40,6 @@ func (s service) LoginEmployee(ctx context.Context, employee *LoginReq) (string,
 		return "", err
 	}
 	err = bcrypt.CompareHashAndPassword([]byte(emp.Password), []byte(employee.Password))
-	fmt.Println(emp.Password)
 	if err != nil {
 		s.logger.Println(err)
 		return "", errors.New(customErrors.ErrorAuthFailed)
