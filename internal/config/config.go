@@ -24,7 +24,8 @@ type Config struct {
 	} `yaml:"database"`
 
 	Auth struct {
-		JwtKey string `yaml:"jwtkey"`
+		JwtKey    string `yaml:"jwtkey"`
+		JwtKeyLen int    `yaml:"jwtkeysize"`
 	} `yaml:"auth"`
 
 	Pagination struct {
@@ -33,21 +34,21 @@ type Config struct {
 	} `yaml:"pagination"`
 }
 
-func Load() (*Config, error) {
+func Load(logger *log.Logger) (*Config, error) {
 	appConfig := &Config{}
 	configFile := "local.yaml"
 	if _, err := os.Stat(configFile); err != nil {
-		log.Printf("could not find local.yaml in directory: %s", err)
+		logger.Printf("could not find local.yaml in directory: %s\n", err)
 		configFile = "config.yaml"
 	}
 
 	bytes, err := ioutil.ReadFile(configFile)
 	if err != nil {
-		log.Printf("error reading config file: %s", err)
+		logger.Printf("error reading config file: %s\n", err)
 		return nil, err
 	}
 	if err = yaml.Unmarshal(bytes, &appConfig); err != nil {
-		log.Printf("error unmarshalling config: %s", err)
+		logger.Printf("error unmarshalling config: %s\n", err)
 		return nil, err
 	}
 

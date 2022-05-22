@@ -12,7 +12,8 @@ database:
   port: 5432
 
 auth:
-  jwtkey: "mysecretkey"
+  jwtkey: "mysecretkey12345mysecretkey12345"
+  jwtkeysize: 32
 
 pagination:
   perpage : 5

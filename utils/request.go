@@ -10,14 +10,6 @@ import (
 	"githb.com/demo-employee-api/internal/config"
 )
 
-// type QueryParameters struct {
-// 	IncludeArchieved bool   `json:"include_archieved"`
-// 	Id               int    `json:"id"`
-// 	Name             string `json:"name"`
-// 	Page             int    `json:"page"`
-// 	PerPage          int    `json:"perpage"`
-// }
-
 func ValidateRequest(r *http.Request, req interface{}) error {
 	decoder := json.NewDecoder(r.Body)
 	defer r.Body.Close()
@@ -65,7 +57,7 @@ func ValidateParameters(conf *config.Config, r *http.Request) (map[string]string
 			return nil, err
 		}
 	} else {
-		paramMap["page"] = ""
+		paramMap["page"] = strconv.Itoa(conf.Pagination.DefaultPage)
 	}
 
 	if perPage := r.URL.Query().Get("per_page"); perPage != "" {
@@ -75,7 +67,7 @@ func ValidateParameters(conf *config.Config, r *http.Request) (map[string]string
 			return nil, err
 		}
 	} else {
-		paramMap["per_page"] = ""
+		paramMap["per_page"] = strconv.Itoa(conf.Pagination.PerPage)
 	}
 
 	if sort_by := r.URL.Query().Get("sort_by"); sort_by != "" {

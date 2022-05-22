@@ -1,7 +1,6 @@
 package employee
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"strconv"
@@ -10,14 +9,16 @@ import (
 	"githb.com/demo-employee-api/internal/entity"
 	"githb.com/demo-employee-api/internal/middleware"
 	"githb.com/demo-employee-api/pkg/customErrors"
+	"githb.com/demo-employee-api/pkg/token"
 	"githb.com/demo-employee-api/utils"
 	"github.com/gorilla/mux"
-	"golang.org/x/crypto/bcrypt"
 )
 
 type resource struct {
-	conf    *config.Config
-	service Service
+	conf       *config.Config
+	service    Service
+	logger     *log.Logger
+	tokenMaker token.Maker
 }
 
 type Status struct {
@@ -25,26 +26,48 @@ type Status struct {
 	ErrorMessage string `json:"errorMessage,omitempty"`
 }
 
-type ListEmpRes struct {
-	Status    Status            `json:"status"`
-	Employees []entity.Employee `json:"employees"`
-}
-
-type UpdateEmpReq struct {
-	UserId    int    `json:"user_id,omitempty"`
-	FirstName string `json:"first_name,omitempty" validate:"required"`
-	LastName  string `json:"last_name,omitempty" validate:"required"`
-	Role      string `json:"role" validate:"required,role"`
-}
-
-func RegisterHandlers(conf *config.Config, router *mux.Router, svc Service) {
-	res := resource{conf, svc}
+func RegisterHandlers(conf *config.Config, router *mux.Router, svc Service, logger *log.Logger, tokenMaker token.Maker) {
+	res := resource{conf, svc, logger, tokenMaker}
+	router.HandleFunc("/login", res.LoginEmployee).Methods("POST")
 	router.HandleFunc("/employees", res.ListEmployee).Methods("GET")
 	router.HandleFunc("/employees/params", res.ListEmployeeByParams).Methods("GET")
-	router.HandleFunc("/employee", middleware.AuthorizeUser(res.conf, res.CreateEmployee)).Methods("POST")
-	router.HandleFunc("/employee/{id}", middleware.AuthorizeUser(res.conf, res.UpdateEmployee)).Methods("PUT")
-	router.HandleFunc("/employee/{id}", middleware.AuthorizeUser(res.conf, res.DeleteEmployee)).Methods("DELETE")
-	// router.HandleFunc("/migrations", middleware.AuthorizeUser(res.conf, res.Migrations)).Methods("GET")
+	router.HandleFunc("/employee", middleware.AuthorizeUser(res.tokenMaker, res.logger, res.CreateEmployee)).Methods("POST")
+	router.HandleFunc("/employee/{id}", middleware.AuthorizeUser(res.tokenMaker, res.logger, res.UpdateEmployee)).Methods("PUT")
+	router.HandleFunc("/employee/{id}", middleware.AuthorizeUser(res.tokenMaker, res.logger, res.DeleteEmployee)).Methods("DELETE")
+}
+
+type LoginReq struct {
+	Email    string `json:"email" validate:"required,email"`
+	Password string `json:"password" validate:"required,password"`
+}
+
+type LoginRes struct {
+	Status      Status `json:"status"`
+	AccessToken string `json:"token"`
+}
+
+func (res resource) LoginEmployee(w http.ResponseWriter, r *http.Request) {
+	req := LoginReq{}
+	resp := LoginRes{}
+	err := utils.ValidateRequest(r, &req)
+	if err != nil {
+		res.logger.Println(err)
+		errResp, code := customErrors.FindErrorType(customErrors.ErrorValidation)
+		utils.JsonResponse(w, code, errResp)
+		return
+	}
+
+	token, err := res.service.LoginEmployee(r.Context(), &req)
+	if err != nil {
+		res.logger.Println(err)
+		errResp, code := customErrors.FindErrorType(err.Error())
+		utils.JsonResponse(w, code, errResp)
+		return
+	}
+	resp.AccessToken = token
+	resp.Status.Success = true
+	utils.JsonResponse(w, http.StatusOK, resp)
+
 }
 
 func (res resource) CreateEmployee(w http.ResponseWriter, r *http.Request) {
@@ -53,26 +76,15 @@ func (res resource) CreateEmployee(w http.ResponseWriter, r *http.Request) {
 	err := utils.ValidateRequest(r, &emp)
 	if err != nil {
 		log.Print(err)
-		resp.ErrorMessage = err.Error()
-		utils.JsonResponse(w, http.StatusBadRequest, resp)
+		errRes, code := customErrors.FindErrorType(customErrors.ErrorValidation)
+		utils.JsonResponse(w, code, errRes)
 		return
 	}
-
-	passByteSlice, err := bcrypt.GenerateFromPassword([]byte(emp.Password), bcrypt.MinCost)
-
-	if err != nil {
-		log.Println(err)
-		resp.ErrorMessage = err.Error()
-		utils.JsonResponse(w, http.StatusInternalServerError, resp)
-		return
-	}
-
-	emp.Password = string(passByteSlice)
 
 	err = res.service.CreateEmployee(r.Context(), &emp)
 
 	if err != nil {
-		log.Println(err)
+		res.logger.Println(err)
 		errRes, code := customErrors.FindErrorType(err.Error())
 		utils.JsonResponse(w, code, errRes)
 		return
@@ -81,28 +93,27 @@ func (res resource) CreateEmployee(w http.ResponseWriter, r *http.Request) {
 	utils.JsonResponse(w, http.StatusOK, resp)
 }
 
+type ListEmpRes struct {
+	Status    Status            `json:"status"`
+	Employees []entity.Employee `json:"employees"`
+}
+
 func (res resource) ListEmployee(w http.ResponseWriter, r *http.Request) {
 	resp := ListEmpRes{}
+
 	params, err := utils.ValidateParameters(res.conf, r)
 	if err != nil {
-		log.Println(err)
-		errRes, code := customErrors.FindErrorType(err.Error())
+		res.logger.Println(err)
+		errRes, code := customErrors.FindErrorType(customErrors.ErrorValidation)
 		utils.JsonResponse(w, code, errRes)
 		return
 
 	}
-	fmt.Println(params)
-	var page, perPage int
-	if page, err = strconv.Atoi(params["page"]); err != nil {
-		page = res.conf.Pagination.DefaultPage
-	}
-	if perPage, err = strconv.Atoi(params["per_page"]); err != nil {
-		perPage = res.conf.Pagination.PerPage
-	}
+	// fmt.Println(params)
 
-	emps, err := res.service.ListEmployee(r.Context(), params["archieved"] == "true", page, perPage)
+	emps, err := res.service.ListEmployee(r.Context(), params)
 	if err != nil {
-		log.Println(err)
+		res.logger.Println(err)
 		errRes, code := customErrors.FindErrorType(err.Error())
 		utils.JsonResponse(w, code, errRes)
 		return
@@ -114,20 +125,19 @@ func (res resource) ListEmployee(w http.ResponseWriter, r *http.Request) {
 
 func (res resource) ListEmployeeByParams(w http.ResponseWriter, r *http.Request) {
 
-	params, err := utils.ValidateParameters(res.conf, r)
-
 	resp := ListEmpRes{}
-	var page, perPage int
-	if page, err = strconv.Atoi(params["page"]); err != nil {
-		page = res.conf.Pagination.DefaultPage
-	}
-	if perPage, err = strconv.Atoi(params["per_page"]); err != nil {
-		perPage = res.conf.Pagination.PerPage
+
+	params, err := utils.ValidateParameters(res.conf, r)
+	if err != nil {
+		res.logger.Println(err)
+		errRes, code := customErrors.FindErrorType(customErrors.ErrorValidation)
+		utils.JsonResponse(w, code, errRes)
+		return
 	}
 
-	emps, err := res.service.ListEmployeeByParams(r.Context(), params, page, perPage)
+	emps, err := res.service.ListEmployeeByParams(r.Context(), params)
 	if err != nil {
-		log.Println(err)
+		res.logger.Println(err)
 		errRes, code := customErrors.FindErrorType(err.Error())
 		utils.JsonResponse(w, code, errRes)
 		return
@@ -138,39 +148,35 @@ func (res resource) ListEmployeeByParams(w http.ResponseWriter, r *http.Request)
 
 }
 
+type UpdateEmpReq struct {
+	UserId    int    `json:"user_id,omitempty"`
+	FirstName string `json:"first_name,omitempty" validate:"required"`
+	LastName  string `json:"last_name,omitempty" validate:"required"`
+	Role      string `json:"role" validate:"required,role"`
+}
+
 func (res resource) UpdateEmployee(w http.ResponseWriter, r *http.Request) {
 	resp := Status{}
 	id := mux.Vars(r)["id"]
-	if id == "" {
-		log.Println("id is required")
-		resp.ErrorMessage = "id is required"
-		utils.JsonResponse(w, http.StatusBadRequest, resp)
+	idv, err := strconv.Atoi(id)
+	if err != nil {
+		res.logger.Println(err)
+		errResp, code := customErrors.FindErrorType(customErrors.ErrorInvalidRequest)
+		utils.JsonResponse(w, code, errResp)
 		return
 	}
 	var emp UpdateEmpReq
-	err := utils.ValidateRequest(r, &emp)
+	err = utils.ValidateRequest(r, &emp)
 	if err != nil {
-		log.Println(err)
-		resp.ErrorMessage = err.Error()
-		utils.JsonResponse(w, http.StatusBadRequest, resp)
+		res.logger.Println(err)
+		errRes, code := customErrors.FindErrorType(customErrors.ErrorValidation)
+		utils.JsonResponse(w, code, errRes)
 		return
 	}
-	idv, err := strconv.Atoi(id)
+
+	err = res.service.UpdateEmployee(r.Context(), idv, &emp)
 	if err != nil {
-		log.Panicln(err)
-		resp.ErrorMessage = err.Error()
-		utils.JsonResponse(w, http.StatusInternalServerError, resp)
-		return
-	}
-	employee := entity.Employee{
-		UserId:    idv,
-		FirstName: emp.FirstName,
-		LastName:  emp.LastName,
-		Role:      emp.Role,
-	}
-	err = res.service.UpdateEmployee(r.Context(), &employee)
-	if err != nil {
-		log.Println(err)
+		res.logger.Println(err)
 		errRes, code := customErrors.FindErrorType(err.Error())
 		utils.JsonResponse(w, code, errRes)
 		return
@@ -182,15 +188,9 @@ func (res resource) UpdateEmployee(w http.ResponseWriter, r *http.Request) {
 func (res resource) DeleteEmployee(w http.ResponseWriter, r *http.Request) {
 	resp := Status{}
 	id := mux.Vars(r)["id"]
-	if id == "" {
-		log.Println("id is required")
-		resp.ErrorMessage = "id is required"
-		utils.JsonResponse(w, http.StatusBadRequest, resp)
-		return
-	}
 	err := res.service.DeleteEmployee(r.Context(), id)
 	if err != nil {
-		log.Println(err)
+		res.logger.Println(err)
 		errRes, code := customErrors.FindErrorType(err.Error())
 		utils.JsonResponse(w, code, errRes)
 		return
@@ -198,16 +198,4 @@ func (res resource) DeleteEmployee(w http.ResponseWriter, r *http.Request) {
 
 	resp.Success = true
 	utils.JsonResponse(w, http.StatusOK, resp)
-}
-
-func (res resource) Migrations(w http.ResponseWriter, r *http.Request) {
-	resp := Status{}
-	err := res.service.Migrations(r.Context())
-	if err != nil {
-		errRes, code := customErrors.FindErrorType(err.Error())
-		utils.JsonResponse(w, code, errRes)
-		return
-	}
-	resp.Success = true
-	utils.JsonResponse(w, http.StatusCreated, resp)
 }

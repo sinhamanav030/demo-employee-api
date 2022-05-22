@@ -1,52 +1,63 @@
 package middleware
 
 import (
-	"fmt"
 	"log"
 	"net/http"
+	"strings"
 
-	"githb.com/demo-employee-api/internal/config"
 	"githb.com/demo-employee-api/internal/entity"
 	"githb.com/demo-employee-api/pkg/customErrors"
+	"githb.com/demo-employee-api/pkg/token"
 	"githb.com/demo-employee-api/utils"
 )
 
-func AuthorizeUser(conf *config.Config, f http.HandlerFunc) http.HandlerFunc {
+func AuthorizeUser(tokenMaker token.Maker, logger *log.Logger, f http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		cookie, err := r.Cookie("auth-token")
-		// fmt.Println(err)
-		if err != nil {
-			if err == http.ErrNoCookie {
-				log.Println(err)
-				errResp, code := customErrors.FindErrorType(customErrors.ErrorUnAuthorized)
-				utils.JsonResponse(w, code, errResp)
-				return
-			}
-			log.Println(err)
-			errResp, code := customErrors.FindErrorType(err.Error())
+
+		authHeader := r.Header.Get("Authorization")
+
+		if len(authHeader) == 0 {
+			logger.Println("authorization not provided")
+			errResp, code := customErrors.FindErrorType(customErrors.ErrorAuthFailed)
+			utils.JsonResponse(w, code, errResp)
+			return
+		}
+
+		fields := strings.Fields(authHeader)
+
+		if len(fields) < 2 {
+			logger.Println("authorization invalid format")
+			errResp, code := customErrors.FindErrorType(customErrors.ErrorAuthFailed)
 			utils.JsonResponse(w, code, errResp)
 			return
 
 		}
+		authType := strings.ToLower(fields[0])
 
-		tokenStr := cookie.Value
-		// fmt.Println(tokenStr)
-		claims, err := utils.ExtractToken(tokenStr, conf.Auth.JwtKey)
+		if authType != "bearer" {
+			logger.Println("auth type not supported")
+			errResp, code := customErrors.FindErrorType(customErrors.ErrorAuthFailed)
+			utils.JsonResponse(w, code, errResp)
+			return
+		}
+
+		accessToken := fields[1]
+
+		payload, err := tokenMaker.VerifyToken(accessToken)
+
 		if err != nil {
-			log.Println(err)
+			logger.Println("invalid token", err)
 			errResp, code := customErrors.FindErrorType(err.Error())
 			utils.JsonResponse(w, code, errResp)
 			return
 		}
-		// fmt.Println(tokenStr, claims)
 
-		if claims.Role != entity.RoleAdmin {
-			log.Println(err)
+		if payload.Role != entity.RoleAdmin {
+			logger.Println(err)
 			errResp, code := customErrors.FindErrorType(customErrors.ErrorUnAuthorized)
 			utils.JsonResponse(w, code, errResp)
 			return
 		}
-		fmt.Println(tokenStr)
 
 		f(w, r)
 	}

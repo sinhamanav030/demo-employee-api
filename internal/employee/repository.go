@@ -18,15 +18,16 @@ type Repository interface {
 	GetByParams(ctx context.Context, params map[string]string, page int, perPage int) ([]entity.Employee, error)
 	Update(ctx context.Context, employee entity.Employee) error
 	Delete(ctx context.Context, id string) error
-	Migrations(ctx context.Context) error
+	GetByEmail(ctx context.Context, email string) (entity.Employee, error)
 }
 
 type repository struct {
-	db *sql.DB
+	db     *sql.DB
+	logger *log.Logger
 }
 
-func NewRepository(db *sql.DB) Repository {
-	return repository{db}
+func NewRepository(db *sql.DB, logger *log.Logger) Repository {
+	return repository{db, logger}
 }
 
 func (rep repository) Create(ctx context.Context, emp entity.Employee) error {
@@ -35,29 +36,32 @@ func (rep repository) Create(ctx context.Context, emp entity.Employee) error {
 	values('%v','%v','%v','%v','%v','now','now',FALSE);`, emp.FirstName, emp.LastName, emp.Email, emp.Password, emp.Role)
 	result, err := rep.db.ExecContext(ctx, query)
 	if err != nil {
-		// log.Println(err)
-		return err
+		rep.logger.Println(err)
+		return errors.New(customErrors.ErrorUserExists)
 	}
 	rc, err := result.RowsAffected()
 	if err != nil {
-		return err
-	}
-
-	if rc == 0 {
+		rep.logger.Println(err)
 		return errors.New(customErrors.ErrorInternalServer)
 	}
 
-	log.Println(rc)
+	if rc == 0 {
+		rep.logger.Println(err)
+		return errors.New(customErrors.ErrorInternalServer)
+	}
+
+	rep.logger.Printf("%d rows inseterd ", rc)
 	return nil
 
 }
 
-func (rep repository) Get(ctx context.Context, include_archieved bool, page int, perPage int) ([]entity.Employee, error) {
+func (rep repository) Get(ctx context.Context, include_archieved bool, page, perPage int) ([]entity.Employee, error) {
 	emps := make([]entity.Employee, 0)
 	query := fmt.Sprintf(`SELECT user_id,first_name,last_name,email,role FROM employees WHERE archieved=false or archieved=%v limit %d offset %d ;`, include_archieved, perPage, (page-1)*perPage)
 	rows, err := rep.db.QueryContext(ctx, query)
 	if err != nil {
-		return emps, err
+		rep.logger.Println(err)
+		return emps, errors.New(customErrors.ErrorInternalServer)
 	}
 	for rows.Next() {
 		var employee entity.Employee
@@ -73,9 +77,11 @@ func (rep repository) GetByParams(ctx context.Context, params map[string]string,
 	// fmt.Println(params)
 	query := "SELECT user_id,first_name,last_name,email,role FROM employees WHERE "
 
-	if _, ok := params["user_id"]; ok {
-		if idv, err := strconv.Atoi(params["user_id"]); err != nil {
-			query = fmt.Sprintf(query, " user_id=%v AND ", idv)
+	if id, ok := params["user_id"]; ok {
+		if _, err := strconv.Atoi(params["user_id"]); err == nil {
+			query = query + " user_id=" + id + " AND"
+		} else {
+			rep.logger.Println(err)
 		}
 
 	}
@@ -108,11 +114,12 @@ func (rep repository) GetByParams(ctx context.Context, params map[string]string,
 	}
 	query = query + " offset " + perPageV + " limit " + pageV
 
-	fmt.Println(query)
+	rep.logger.Printf("Executed Query %v", query)
 
 	rows, err := rep.db.QueryContext(ctx, query)
 	if err != nil {
-		return nil, err
+		rep.logger.Println(err)
+		return nil, errors.New(customErrors.ErrorInternalServer)
 	}
 	employees := make([]entity.Employee, 0)
 	for rows.Next() {
@@ -121,10 +128,40 @@ func (rep repository) GetByParams(ctx context.Context, params map[string]string,
 		employees = append(employees, employee)
 	}
 	if len(employees) == 0 {
+		rep.logger.Println(err)
 		return nil, errors.New(customErrors.ErrorDataNotFound)
 	}
 	return employees, nil
 
+}
+
+func (rep repository) GetByEmail(ctx context.Context, email string) (entity.Employee, error) {
+	query := fmt.Sprintf(`
+	SELECT user_id,email,password,role FROM employees 
+	WHERE email='%v' and archieved=false;
+	`, email)
+	row, err := rep.db.QueryContext(ctx, query)
+
+	if err != nil {
+		rep.logger.Println(err)
+		return entity.Employee{}, errors.New(customErrors.ErrorInternalServer)
+	}
+
+	var emp entity.Employee
+	for row.Next() {
+		row.Scan(&emp.UserId, &emp.Email, &emp.Password, &emp.Role)
+	}
+	if emp.UserId == 0 {
+		return entity.Employee{}, errors.New(customErrors.ErrorDataNotFound)
+	}
+
+	query = fmt.Sprintf(`
+		UPDATE employees
+		SET last_access_at='now'
+		WHERE email='%v' AND archieved=false' 
+	`, email)
+	_, _ = rep.db.QueryContext(ctx, query)
+	return emp, nil
 }
 
 func (rep repository) Update(ctx context.Context, emp entity.Employee) error {
@@ -137,22 +174,25 @@ func (rep repository) Update(ctx context.Context, emp entity.Employee) error {
 	last_access_at = 'now'
 	WHERE user_id =%v AND archieved=false
 	`, emp.FirstName, emp.LastName, emp.Role, emp.UserId)
+
 	result, err := rep.db.ExecContext(ctx, query)
 
 	if err != nil {
-		return err
+		rep.logger.Println(err)
+		return errors.New(customErrors.ErrorInternalServer)
 	}
 
 	rc, err := result.RowsAffected()
 	if err != nil {
-		return err
+		rep.logger.Println(err)
+		return errors.New(customErrors.ErrorInternalServer)
 	}
 
 	if rc == 0 {
 		return errors.New(customErrors.ErrorDataNotFound)
 	}
 
-	fmt.Println(rc)
+	rep.logger.Printf("%d rows updated\n", rc)
 	return nil
 
 }
@@ -161,42 +201,18 @@ func (rep repository) Delete(ctx context.Context, id string) error {
 	query := fmt.Sprintf("UPDATE employees SET archieved=true WHERE user_id=%v AND archieved=false AND NOT role='admin'", id)
 	result, err := rep.db.ExecContext(ctx, query)
 	if err != nil {
-		return err
+		rep.logger.Println(err)
+		return errors.New(customErrors.ErrorInternalServer)
 	}
 	rc, err := result.RowsAffected()
 	if err != nil {
-		return err
+		rep.logger.Println(err)
+		return errors.New(customErrors.ErrorInternalServer)
 	}
-	fmt.Println(rc)
+	rep.logger.Printf("%d rows updated\n", rc)
 
 	if rc == 0 {
 		return errors.New(customErrors.ErrorDataNotFound)
 	}
-	return nil
-}
-
-func (rep repository) Migrations(ctx context.Context) error {
-	result, err := rep.db.ExecContext(ctx, `CREATE TABLE employees(
-		user_id serial PRIMARY KEY,
-		first_name VARCHAR(15) NOT NULL,
-		last_name VARCHAR(15) NOT NULL,
-		email VARCHAR(50) UNIQUE NOT NULL,
-		role VARCHAR(15) NOT NULL,
-		password VARCHAR(256) NOT NULL,
-		created_at TIMESTAMP NOT NULL,
-		last_access_at TIMESTAMP,
-		updated_at TIMESTAMP,
-		archieved BOOLEAN
-	);`)
-
-	if err != nil {
-		return err
-	}
-
-	rc, err := result.RowsAffected()
-	if err != nil {
-		return err
-	}
-	fmt.Println(rc)
 	return nil
 }
