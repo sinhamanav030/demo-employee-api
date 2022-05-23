@@ -16,3 +16,439 @@
 2022/05/22 21:03:51 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:203: 15 Employee Deleted
 2022/05/22 21:06:26 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/cmd/server/main.go:37: Connection Success
 2022/05/22 21:06:31 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:67: manavsinha03@gmail.com Logged In
+2022/05/22 21:17:17 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/cmd/server/main.go:37: Connection Success
+2022/05/22 21:17:21 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 21:20:14 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 21:20:26 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 21:20:35 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 21:20:55 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 21:24:10 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 21:24:12 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 21:24:13 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 21:24:14 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 21:26:06 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 21:26:14 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 21:27:09 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 21:28:52 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 21:38:13 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 21:38:16 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 21:39:10 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 21:39:13 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 21:39:16 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 22:25:07 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 22:25:12 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 22:26:12 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 22:27:14 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 22:27:27 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 22:27:55 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 22:28:26 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 22:28:48 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/22 22:33:16 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 05:40:01 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/pkg/db/db.go:26: dial tcp 172.17.0.2:5432: connect: no route to host
+2022/05/23 05:40:01 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/cmd/server/main.go:35: dial tcp 172.17.0.2:5432: connect: no route to host
+2022/05/23 05:41:38 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/cmd/server/main.go:37: Connection Success
+2022/05/23 05:47:26 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:54: json: cannot unmarshal object into Go struct field LoginReq.email of type string
+2022/05/23 05:48:20 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:54: json: cannot unmarshal object into Go struct field LoginReq.email of type string
+2022/05/23 05:48:39 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:54: Key: 'LoginReq.Email' Error:Field validation for 'Email' failed on the 'email' tag
+Key: 'LoginReq.Password' Error:Field validation for 'Password' failed on the 'password' tag
+2022/05/23 05:49:25 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:67: manavsinha03@gmail.com Logged In
+2022/05/23 05:54:05 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 05:54:11 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 05:54:24 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 05:54:47 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 05:55:13 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 05:55:59 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 05:56:42 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 05:57:31 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/cmd/server/main.go:37: Connection Success
+2022/05/23 06:04:40 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/cmd/server/main.go:37: Connection Success
+2022/05/23 06:04:57 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/cmd/server/main.go:37: Connection Success
+2022/05/23 06:05:01 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:06:04 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/cmd/server/main.go:37: Connection Success
+2022/05/23 06:06:08 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:06:13 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:20: authorization not provided
+2022/05/23 06:06:47 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:06:51 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:20: authorization not provided
+2022/05/23 06:07:13 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:07:21 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:07:50 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:08:07 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:08:12 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:20: authorization not provided
+2022/05/23 06:08:16 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:08:27 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:08:29 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:20: authorization not provided
+2022/05/23 06:08:42 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:54: Key: 'LoginReq.Password' Error:Field validation for 'Password' failed on the 'password' tag
+2022/05/23 06:09:45 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:54: Key: 'LoginReq.Password' Error:Field validation for 'Password' failed on the 'password' tag
+2022/05/23 06:10:26 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:54: Key: 'LoginReq.Password' Error:Field validation for 'Password' failed on the 'password' tag
+2022/05/23 06:10:32 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:67: manavsinha03@gmail.com Logged In
+2022/05/23 06:10:38 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:10:40 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:20: authorization not provided
+2022/05/23 06:11:23 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:11:28 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:20: authorization not provided
+2022/05/23 06:13:29 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:13:33 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:20: authorization not provided
+2022/05/23 06:14:13 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:67: manavsinha03@gmail.com Logged In
+2022/05/23 06:14:15 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:14:17 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:20: authorization not provided
+2022/05/23 06:15:18 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:17:51 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/cmd/server/main.go:37: Connection Success
+2022/05/23 06:17:58 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:62: Authorization Succesful
+2022/05/23 06:17:58 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:210: 1 rows updated
+2022/05/23 06:17:58 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:203: id:8 Employee Deleted
+2022/05/23 06:18:01 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:18:46 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:22:21 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:22:28 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:23:28 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:32:03 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:45:51 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:53:31 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=12 AND archieved=false offset 0 limit 5
+2022/05/23 06:53:31 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:129: <nil>
+2022/05/23 06:53:31 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/service.go:111: data not found
+2022/05/23 06:53:31 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:143: data not found
+2022/05/23 06:53:37 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=7 AND archieved=false offset 0 limit 5
+2022/05/23 06:53:37 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 06:56:30 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=5 AND archieved=false offset 0 limit 5
+2022/05/23 06:56:30 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 06:56:46 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=5 AND archieved=false offset 0 limit 5
+2022/05/23 06:56:46 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 06:56:55 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:56:58 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=3 AND archieved=false offset 0 limit 5
+2022/05/23 06:56:58 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 06:57:24 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=3 AND archieved=false offset 0 limit 5
+2022/05/23 06:57:24 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 06:57:25 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=3 AND archieved=false offset 0 limit 5
+2022/05/23 06:57:25 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 06:57:57 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=3 AND archieved=false offset 0 limit 5
+2022/05/23 06:57:57 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 06:58:04 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=3 AND archieved=false offset 0 limit 5
+2022/05/23 06:58:04 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 06:58:17 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=3 AND archieved=false offset 0 limit 5
+2022/05/23 06:58:17 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 06:58:31 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=3 AND archieved=false offset 0 limit 5
+2022/05/23 06:58:31 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 06:59:11 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=3 AND archieved=false offset 0 limit 5
+2022/05/23 06:59:11 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 06:59:32 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=3 AND archieved=false offset 0 limit 5
+2022/05/23 06:59:32 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 06:59:39 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=3 AND archieved=false offset 0 limit 5
+2022/05/23 06:59:39 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 06:59:44 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 06:59:45 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=1 AND archieved=false offset 0 limit 5
+2022/05/23 06:59:45 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 07:01:15 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:01:17 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=5 AND archieved=false offset 0 limit 5
+2022/05/23 07:01:17 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 07:01:39 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=5 AND archieved=false offset 0 limit 5
+2022/05/23 07:01:39 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 07:01:45 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:49: invalid token token is invalid
+2022/05/23 07:02:18 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:02:37 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:67: kk@gmail.com Logged In
+2022/05/23 07:02:40 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:02:42 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=5 AND archieved=false offset 0 limit 5
+2022/05/23 07:02:42 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 07:02:46 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:56: <nil>
+2022/05/23 07:03:02 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:67: manavsinha03@gmail.com Logged In
+2022/05/23 07:03:04 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:03:06 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=5 AND archieved=false offset 0 limit 5
+2022/05/23 07:03:06 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 07:03:09 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:62: Authorization Succesful
+2022/05/23 07:03:09 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:193: 1 rows updated
+2022/05/23 07:03:09 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:188: id:5 Employee updated
+2022/05/23 07:03:12 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:23:40 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:23:50 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:24:10 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:24:27 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:25:15 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:25:27 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:25:36 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:25:48 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:26:55 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:26:58 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:27:02 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:27:14 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:28:29 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:28:47 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:29:07 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:29:35 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:30:24 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:30:35 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:30:47 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:31:37 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by first_name asc offset 0 limit 5
+2022/05/23 07:31:37 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 07:31:56 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:31:59 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by first_name asc offset 0 limit 5
+2022/05/23 07:31:59 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 07:33:28 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:33:31 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:33:51 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:33:55 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by first_name asc offset 0 limit 5
+2022/05/23 07:33:55 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 07:34:41 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:35:45 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:38:31 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by first_name asc offset 0 limit 5
+2022/05/23 07:38:31 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 07:39:54 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:39:56 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:41:18 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:41:21 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by first_name asc offset 0 limit 5
+2022/05/23 07:41:21 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 07:41:55 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:41:57 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by first_name asc offset 0 limit 5
+2022/05/23 07:41:57 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 07:41:57 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:42:00 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by first_name asc offset 0 limit 5
+2022/05/23 07:42:00 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 07:42:00 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:42:07 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:43:13 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:43:14 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by last_name asc offset 0 limit 5
+2022/05/23 07:43:14 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 07:43:14 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:43:40 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:43:43 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:43:45 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 0 limit 5
+2022/05/23 07:43:45 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 07:43:45 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:44:01 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:44:02 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by user_id asc offset 0 limit 5
+2022/05/23 07:44:02 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 07:44:02 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:44:25 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:44:26 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by email asc offset 0 limit 5
+2022/05/23 07:44:26 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 07:44:26 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:44:28 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by email asc offset 0 limit 5
+2022/05/23 07:44:28 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 07:44:28 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:44:50 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:44:51 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 0 limit 5
+2022/05/23 07:44:51 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 07:44:51 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:52:41 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:49: invalid token token is invalid
+2022/05/23 07:52:53 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:54: Key: 'LoginReq.Email' Error:Field validation for 'Email' failed on the 'email' tag
+Key: 'LoginReq.Password' Error:Field validation for 'Password' failed on the 'required' tag
+2022/05/23 07:53:08 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:54: Key: 'LoginReq.Password' Error:Field validation for 'Password' failed on the 'password' tag
+2022/05/23 07:53:23 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:67: kk@gmail.com Logged In
+2022/05/23 07:53:41 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:56: <nil>
+2022/05/23 07:53:54 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:67: manavsinha03@gmail.com Logged In
+2022/05/23 07:53:55 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:54:07 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:62: Authorization Succesful
+2022/05/23 07:54:16 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:62: Authorization Succesful
+2022/05/23 07:54:20 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:62: Authorization Succesful
+2022/05/23 07:54:36 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/middleware/middleware.go:62: Authorization Succesful
+2022/05/23 07:54:36 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:53: 1 rows inseterd 
+2022/05/23 07:54:36 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:93: 0 user created
+2022/05/23 07:54:42 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:55:13 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:55:18 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:59:35 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 07:59:51 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:02:50 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:02:53 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=7 AND archieved=false offset 0 limit 5
+2022/05/23 08:02:53 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:02:58 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=7 AND archieved=false offset 0 limit 5
+2022/05/23 08:02:58 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:03:00 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:03:01 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=3 AND archieved=false offset 0 limit 5
+2022/05/23 08:03:01 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:03:08 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=3 AND archieved=false offset 0 limit 5
+2022/05/23 08:03:08 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:03:10 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:03:41 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:03:55 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:04:05 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:04:14 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:04:35 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:05:34 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:05:57 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:06:08 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:06:20 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:06:25 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:06:34 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:06:41 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:06:54 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:07:15 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:07:20 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:08:49 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:08:56 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:09:29 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:10:26 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:10:50 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:12:14 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:12:36 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:13:20 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by first_name asc offset 0 limit 5
+2022/05/23 08:13:20 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:13:20 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:13:21 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by user_id asc offset 0 limit 5
+2022/05/23 08:13:21 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:13:21 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:13:23 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by last_name asc offset 0 limit 5
+2022/05/23 08:13:23 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:13:23 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:14:29 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:14:34 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:15:22 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:15:28 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:15:31 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:16:02 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:16:34 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:16:43 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:16:49 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:16:56 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:17:12 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:18:07 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:18:14 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:18:35 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:18:46 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:19:10 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:20:11 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:20:12 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:21:06 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:22:03 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:23:20 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:23:48 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:24:36 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:25:49 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:25:55 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:26:12 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:26:27 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:26:40 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:27:35 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:27:52 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:28:32 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:29:25 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:29:27 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 0 limit 1
+2022/05/23 08:29:27 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:29:44 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 0 limit 5
+2022/05/23 08:29:44 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:29:52 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE first_name ILIKE '%m%' AND  archieved=false offset 0 limit 5
+2022/05/23 08:29:52 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:30:00 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE first_name ILIKE '%d%' AND  archieved=false offset 0 limit 5
+2022/05/23 08:30:00 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:129: <nil>
+2022/05/23 08:30:00 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/service.go:111: data not found
+2022/05/23 08:30:00 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:143: data not found
+2022/05/23 08:30:28 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:30:33 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE first_name ILIKE '%d%' AND  archieved=false offset 0 limit 1
+2022/05/23 08:30:33 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:129: <nil>
+2022/05/23 08:30:33 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/service.go:111: data not found
+2022/05/23 08:30:33 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:143: data not found
+2022/05/23 08:31:00 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:31:14 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:31:23 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 0 limit 8
+2022/05/23 08:31:23 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:31:23 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:31:26 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by first_name asc offset 0 limit 5
+2022/05/23 08:31:26 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:31:26 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:31:28 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by last_name asc offset 0 limit 5
+2022/05/23 08:31:28 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:31:28 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:31:30 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by email asc offset 0 limit 5
+2022/05/23 08:31:30 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:31:30 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:31:31 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 0 limit 5
+2022/05/23 08:31:31 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:31:31 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:32:23 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 0 limit 8
+2022/05/23 08:32:23 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:32:23 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:32:47 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 4 limit 4
+2022/05/23 08:32:47 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:32:47 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:33:01 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 0 limit 10
+2022/05/23 08:33:01 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:33:01 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:33:17 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE first_name ILIKE '%m%' AND  archieved=false offset 0 limit 5
+2022/05/23 08:33:17 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:33:17 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:33:25 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE first_name ILIKE '%manav%' AND  archieved=false offset 0 limit 1
+2022/05/23 08:33:25 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:33:25 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:33:31 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE first_name ILIKE '%man%' AND  archieved=false offset 0 limit 6
+2022/05/23 08:33:31 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:33:31 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:33:35 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 0 limit 1
+2022/05/23 08:33:35 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:33:35 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:33:47 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=7 AND archieved=false offset 0 limit 1
+2022/05/23 08:33:47 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:33:47 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:33:52 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:33:54 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:34:01 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 0 limit 11
+2022/05/23 08:34:01 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:34:01 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:35:32 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:39:22 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:41:12 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:42:00 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:42:02 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:42:33 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:42:41 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 0 limit 7
+2022/05/23 08:42:41 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:42:41 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:42:43 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by email asc offset 30 limit 5
+2022/05/23 08:42:43 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:129: <nil>
+2022/05/23 08:42:43 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/service.go:111: data not found
+2022/05/23 08:42:43 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:143: data not found
+2022/05/23 08:43:14 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:43:16 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 0 limit 7
+2022/05/23 08:43:16 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:43:17 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:43:18 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by email asc offset 0 limit 7
+2022/05/23 08:43:18 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:43:18 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:43:20 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by last_name asc offset 0 limit 7
+2022/05/23 08:43:20 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:43:20 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:43:22 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by first_name asc offset 0 limit 7
+2022/05/23 08:43:22 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:43:22 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:43:23 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false order by user_id asc offset 0 limit 7
+2022/05/23 08:43:23 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:43:23 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:53:42 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:54:14 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:54:15 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:54:18 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:54:24 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:54:30 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:54:40 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:55:18 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:55:24 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 0 limit 10
+2022/05/23 08:55:24 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:55:24 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:55:32 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 08:55:35 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=10 AND archieved=false offset 0 limit 1
+2022/05/23 08:55:35 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:55:39 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=10 AND archieved=false offset 0 limit 1
+2022/05/23 08:55:39 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 08:55:51 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  user_id=10 AND archieved=false offset 0 limit 1
+2022/05/23 08:55:51 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 09:02:18 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 09:02:24 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 09:02:27 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 0 limit 1
+2022/05/23 09:02:27 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 09:02:30 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 0 limit 1
+2022/05/23 09:02:30 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 09:02:53 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 09:02:59 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 0 limit 1
+2022/05/23 09:02:59 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 09:04:18 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 09:04:23 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 0 limit 1
+2022/05/23 09:04:23 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 09:04:25 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 0 limit 1
+2022/05/23 09:04:25 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 09:04:59 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 09:05:12 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 09:05:16 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 09:05:21 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=true offset 0 limit 10
+2022/05/23 09:05:21 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 09:05:21 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 09:05:34 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE  archieved=false offset 0 limit 10
+2022/05/23 09:05:34 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 09:05:34 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted
+2022/05/23 09:05:50 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/repository.go:115: Executed Query SELECT user_id,first_name,last_name,email,role FROM employees WHERE first_name ILIKE '%n%' AND  archieved=true offset 0 limit 10
+2022/05/23 09:05:50 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:148: List Employee Query with Params Exeuted
+2022/05/23 09:05:50 /home/manav/Bootcamp/goworkspace/src/db-tutorial/api/internal/employee/api.go:123: List Employee Query Exeuted

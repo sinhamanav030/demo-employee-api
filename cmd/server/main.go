@@ -50,7 +50,13 @@ func main() {
 		logger,
 		tokenMaker,
 	)
-	handler := cors.Default().Handler(router)
+	c := cors.New(cors.Options{
+		AllowedOrigins:   []string{"*"},
+		AllowedMethods:   []string{http.MethodGet, http.MethodDelete, http.MethodPost, http.MethodPut},
+		AllowCredentials: true,
+		AllowedHeaders:   []string{"Authorization"},
+	})
+	handler := c.Handler(router)
 
 	srv := &http.Server{
 		Addr:    ":" + fmt.Sprintf("%v", config.Server.Port),
